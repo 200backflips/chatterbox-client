@@ -1,0 +1,8 @@
+.ChatRoom {
+  font-size: calc(10px + 2vmin);
+  text-align: center;
+}
+
+.ChatRoom a {
+  color: #000000;
+}
