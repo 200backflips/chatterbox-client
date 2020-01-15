@@ -1,11 +1,13 @@
-import React from 'react'
-import "./Message.css";
+import React from 'react';
+import './Message.css';
 
-
-export const Message = () => {
-
-  return (
-    <div className="Message">
-    </div>
-  )
-}
+export const Message = ({ message }) => {
+	console.log('*********', message)
+	return (
+		<div className="Message">
+			<div className="bubble">
+				<p>{message}</p>
+			</div>
+		</div>
+	);
+};

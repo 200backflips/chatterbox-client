@@ -1,0 +1,31 @@
+.Message {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	margin: 1em;
+}
+
+.bubble {
+	position: relative;
+	display: inline-block;
+	max-width: 50%;
+	background-color: gainsboro;
+	border-radius: 0.4em;
+	padding: 1em;
+	text-align: left;
+}
+
+.bubble:after {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 1em solid transparent;
+	border-right-color: gainsboro;
+	border-left: 0;
+	border-bottom: 0;
+	margin-top: -0.5em;
+	margin-left: -1em;
+}

@@ -1,10 +1,15 @@
-import React from 'react'
-import "./Header.css";
+import React from 'react';
+import './Header.css';
+import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 export const Header = () => {
-  return (
-    <div className="ChatRoomHeader">
-      <h2>elloooooo</h2>
-      </div>
-  )
-}
+	const { username } = useSelector(state => state.loginReducer);
+
+	return (
+		<div className="Header">
+			<h2>elloooooo {username}</h2>
+			<Link to="/">back</Link>
+		</div>
+	);
+};

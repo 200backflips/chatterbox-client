@@ -1,10 +1,10 @@
-import React from 'react'
-import "./Input.css";
+import React from 'react';
+import './Input.css';
 
 export const Input = () => {
-  return (
-    <div className="Input">
-      <p>aaaaaaaah!!!!</p>
-    </div>
-  )
-}
+	return (
+		<div className="Input">
+			<p>lalalalala</p>
+		</div>
+	);
+};

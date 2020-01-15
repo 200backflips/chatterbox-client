@@ -1,5 +1,9 @@
-.ChatRoomHeader {
+.Header {
   height: 10vh;
   background-color: #282c34;
-  color: white;
+  color: #ffffff;
+}
+
+.Header a {
+  color: #ffffff;
 }

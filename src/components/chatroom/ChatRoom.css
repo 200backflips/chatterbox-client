@@ -3,6 +3,9 @@
   text-align: center;
 }
 
-.ChatRoom a {
-  color: #000000;
+.Header .Input {
+  z-index: 1;
+}
+.Feed {
+  z-index: 0;
 }
