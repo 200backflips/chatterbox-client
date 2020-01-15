@@ -9,43 +9,28 @@ let socket;
 export const Feed = () => {
 	const ENDPOINT = 'localhost:8080';
 	const { username } = useSelector(state => state.loginReducer);
-	const join = [];
+	const { messages } = useSelector(state => state.messageReducer);
 
 	useEffect(() => {
 		socket = io(ENDPOINT);
 
 		socket.emit('message', `${username} is dumb. yes.`);
 
-		socket.on('join', message => {
-			return join.push(message);
-		});
+		// socket.on('join', message => {
+		// 	return join.push(message);
+		// });
 
 		return () => {
 			socket.emit('disconnect', username);
 			socket.off();
 		};
-	}, [ENDPOINT]);
-
-	// const messageArray = [
-	// 	'hello!',
-	// 	'hello',
-	// 	'follow me',
-	// 	'ok!',
-	// 	'blablablabla bla bla bla bla long message',
-	// 	'blablablabla bla bla also long message'
-	// ];
+	}, [ENDPOINT, username]);
 
 	return (
 		<div className="Feed">
-			{join.map((msgs, i) => (
-				<Message message={msgs} key={i} />
+			{messages.map((content, i) => (
+				<Message content={content} key={i} />
 			))}
 		</div>
 	);
 };
-
-// <div className="Feed">
-// 	{messageArray.map((msgs, i) => (
-// 		<Message message={msgs} key={i} />
-// 	))}
-// </div>

@@ -1,12 +1,11 @@
 import React from 'react';
 import './Message.css';
 
-export const Message = ({ message }) => {
-	console.log('*********', message)
+export const Message = ({ content }) => {
 	return (
 		<div className="Message">
 			<div className="bubble">
-				<p>{message}</p>
+				<p>{content}</p>
 			</div>
 		</div>
 	);

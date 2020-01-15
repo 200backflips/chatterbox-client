@@ -1,15 +1,17 @@
 import React from 'react';
 import './Header.css';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 
 export const Header = () => {
-	const { username } = useSelector(state => state.loginReducer);
-
 	return (
 		<div className="Header">
-			<h2>elloooooo {username}</h2>
-			<Link to="/">back</Link>
+			<Link to="/">
+				<img
+					src="https://img.icons8.com/wired/64/000000/exit-sign.png"
+					alt="exit-button"
+				/>
+			</Link>
+			<h2>chatter box</h2>
 		</div>
 	);
 };

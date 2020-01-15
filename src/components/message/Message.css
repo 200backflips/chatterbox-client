@@ -7,9 +7,10 @@
 
 .bubble {
 	position: relative;
-	display: inline-block;
+	display: inline-flex;
 	max-width: 50%;
-	background-color: gainsboro;
+	color: #ffffff;
+	background-color: #3e4a63;
 	border-radius: 0.4em;
 	padding: 1em;
 	text-align: left;
@@ -23,7 +24,8 @@
 	width: 0;
 	height: 0;
 	border: 1em solid transparent;
-	border-right-color: gainsboro;
+	color: #ffffff;
+	border-right-color: #3e4a63;
 	border-left: 0;
 	border-bottom: 0;
 	margin-top: -0.5em;

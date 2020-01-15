@@ -1,44 +1,45 @@
 .Login {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: calc(10px + 2vmin);
-    text-align: center;
+	background-color: #3e4a63;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	color: #ffffff;
+	font-size: calc(10px + 2vmin);
+	text-align: center;
 }
 
 .Login p {
-  margin-bottom: 5rem;
+	margin-bottom: 5rem;
 }
 
-.login-form input, button {
-  display: flex;
-  align-items: center;
-  margin: 0.5rem;
-  width: 80vw;
-  font-size: 1.5rem;
-  text-align: center;
+.login-form input,
+button {
+	display: flex;
+	align-items: center;
+	margin: 0.5rem;
+	width: 80vw;
+	font-size: 1.5rem;
+	text-align: center;
 }
 
-.login-form input[type=text] {
-  padding: 0.2rem 0;
+.login-form input[type='text'] {
+	padding: 0.2rem 0;
 }
 
-.login-form button[type=submit] {  
-  background-color: #282c34;
-  color: white;
-  margin-bottom: 5rem;
-  text-align: center;
+.login-form button[type='submit'] {
+	background-color: #3e4a63;
+	color: #ffffff;
+	margin-bottom: 5rem;
+	text-align: center;
 }
-.login-form button[type=submit]:hover {
-  background-color: white;
-  color: #282c34;
+.login-form button[type='submit']:hover {
+  background-color: #ffffff;
+	color: #3e4a63;
 }
 
 .error-msg {
-  /**/
+	/**/
 }

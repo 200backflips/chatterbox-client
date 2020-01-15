@@ -1,5 +1,22 @@
 .Input {
-  height: 20vh;
-  background-color: #282c34;
-  color: white;
+	border-top: 2px solid gainsboro;
+	color: white;
+}
+
+.message-form {
+  display: flex;
+  align-content: space-around;
+}
+.message-form textarea {
+  width: 80vw;
+	padding: 0.8em;
+  font-size: 1.2rem;
+  resize: none;
+  border: none;
+}
+.message-form button {
+  display: inline-block;
+  width: 20vw;
+  border: none;
+  background-color: #ffffff;
 }

@@ -1,9 +1,18 @@
 .Header {
+  display: flex;
+  justify-content: space-between;
   height: 10vh;
-  background-color: #282c34;
+  background-color: #3e4a63;
   color: #ffffff;
 }
 
-.Header a {
-  color: #ffffff;
+.Header h2 {
+  padding: 0.5em;
+  text-align: left;
+  width: 73vw;
+}
+
+.Header a img {
+  margin: 0.5em;
+  width: 13vw;
 }
