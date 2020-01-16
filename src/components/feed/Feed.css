@@ -2,3 +2,8 @@
   height: 75vh;
   overflow: auto;
 }
+
+.content {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,15 +1,20 @@
 import React from 'react';
 import './Input.css';
-import { g1ttuseDispatch } from 'react-redux';
-import { appendMessage } from '../../redux/actions/message';
+import { useDispatch } from 'react-redux';
+import { appendSentMessage } from '../../redux/actions/message';
+import io from 'socket.io-client';
 
 export const Input = () => {
 	const dispatch = useDispatch();
+	const socket = io('localhost:8080');
 
-	const handleSubmit = e => dispatch(appendMessage(e));
+	const handleSubmit = message => {
+		socket.emit('sentMessages', message);
+		dispatch(appendSentMessage(message));
+	}
 
 	const submitWithEnter = e => {
-		if (e.keyCode === 13 && e.shiftKey === false) {
+		if (e.keyCode === 13 && e.shiftKey === false && e.target.value.length > 1) {
 			e.preventDefault();
 			handleSubmit(e.target.value);
 			e.target.value = '';

@@ -1,0 +1,11 @@
+.speech-bubble-admin {
+	align-self: center;
+	position: relative;
+	margin: 1em;
+	max-width: 50vw;
+	word-wrap: break-word;
+	background-color: #3e4a63;
+	color: #ffffff;
+	padding: 1em;
+	border-radius: 0.4em;
+}
