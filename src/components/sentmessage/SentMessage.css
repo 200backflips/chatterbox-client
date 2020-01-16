@@ -1,7 +1,7 @@
 .speech-bubble-right {
 	display: flex;
 	align-self: flex-end;
-	margin: 1em;
+	margin: 0.5em 1em 0.5em 0.5em;
 	position: relative;
 	max-width: 80vw;
 	word-wrap: break-word;
