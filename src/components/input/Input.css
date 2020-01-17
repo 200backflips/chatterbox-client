@@ -1,22 +1,18 @@
 .Input {
+  display: flex;
+  padding-top: 0.6rem;
 	border-top: 2px solid gainsboro;
 	color: white;
 }
 
-.message-form {
-  display: flex;
-  align-content: space-around;
-}
-.message-form textarea {
+.Input textarea {
+  align-self: center;
   width: 80vw;
-	padding: 0.8em;
+  margin: 0 auto;
+	padding: 0.8rem;
   font-size: 1.2rem;
   resize: none;
   border: none;
-}
-.message-form button {
-  display: inline-block;
-  width: 20vw;
-  border: none;
-  background-color: #ffffff;
+  outline: none;
+  border: 3px solid gainsboro;
 }

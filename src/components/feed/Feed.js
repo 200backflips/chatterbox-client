@@ -1,45 +1,73 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, createRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import './Feed.css';
 import { Message } from '../message/Message';
-import { AdminMessage } from '../adminmessage/AdminMessage';
 import io from 'socket.io-client';
-import { appendAdminMessage, appendMessage } from '../../redux/actions/message';
+import { appendMessage } from '../../redux/actions/message';
+import moment from 'moment';
 
 export const Feed = () => {
 	const { username } = useSelector(state => state.loginReducer);
-	const { adminMessages } = useSelector(state => state.messageReducer);
 	const { messages } = useSelector(state => state.messageReducer);
 	const dispatch = useDispatch();
-
-	let socket;
-	const ENDPOINT = 'localhost:8080';
+	const feedRef = createRef();
 
 	useEffect(() => {
-		socket = io(ENDPOINT);
+		if (feedRef.current) {
+			feedRef.current.scrollTop = feedRef.current.scrollHeight;
+		}
+	}, [feedRef]);
+
+	useEffect(() => {
+		const socket = io('localhost:8080');
 
 		socket.emit('join', username);
-		socket.on('join', message => dispatch(appendAdminMessage(message)));
-		socket.on('receivedMessage', message => {
-			console.log(message)
-			return dispatch(appendMessage(message))
+		socket.on('join', response => {
+			dispatch(
+				appendMessage({
+					user: 'admin',
+					message: `${response} has joined the chat`,
+					timestamp: moment()
+				})
+			);
 		});
-	}, [ENDPOINT, username]);
+
+		socket.on('receivedMessages', response => {
+			dispatch(appendMessage(response));
+		});
+
+		return () => {
+			socket.off('receivedMessages');
+			socket.off('join');
+			socket.off('disconnect');
+			dispatch(
+				appendMessage({
+					user: 'admin',
+					message: `${username} has left the chat`,
+					timestamp: moment()
+				})
+			);
+		};
+	}, []);
+
+	const assignClassName = (content, username) => {
+		if (content === username) {
+			return '-right';
+		} else if (content === 'admin') {
+			return '-admin';
+		}
+		return '-left';
+	};
 
 	return (
-		<div className="Feed">
-			<div className="content">
-				{messages.map((content, i) => (
-					<Message
-						content={content}
-						styling={
-							content.user === username
-								? 'speech-bubble-right'
-								: 'speech-bubble-left'
-						}
-					key={i}/>
-				))}
-			</div>
+		<div className="Feed" ref={feedRef}>
+			{messages.map((content, i) => (
+				<Message
+					content={content}
+					styling={assignClassName(content.user, username)}
+					key={i}
+				/>
+			))}
 		</div>
 	);
 };

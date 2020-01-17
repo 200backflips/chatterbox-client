@@ -1,9 +1,11 @@
 .Feed {
   height: 75vh;
   overflow: auto;
+  scroll-behavior: smooth;
 }
 
-.content {
+.Message {
   display: flex;
   flex-direction: column;
+  font-size: 1.3em;
 }

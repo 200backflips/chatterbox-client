@@ -1,6 +1,5 @@
 const initState = {
 	messages: [],
-	adminMessages: []
 };
 
 export const messageReducer = (state = initState, { type, payload }) => {
@@ -9,11 +8,6 @@ export const messageReducer = (state = initState, { type, payload }) => {
 			return {
 				...state,
 				messages: [...state.messages, payload]
-			};
-		case 'APPEND_ADMIN_MESSAGE':
-			return {
-				...state,
-				adminMessages: [...state.adminMessages, payload]
 			};
 		default:
 			return state;

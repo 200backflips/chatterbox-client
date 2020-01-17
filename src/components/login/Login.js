@@ -2,13 +2,21 @@ import React, { useState } from 'react';
 import './Login.css';
 import { Redirect } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { setUsername, setErrorMessage } from '../../redux/actions/login';
+import {
+	setUsername,
+	setErrorMessage,
+	isUsernameTaken
+} from '../../redux/actions/login';
+import io from 'socket.io-client';
 
 export const Login = () => {
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
+	const [user, setUser] = useState();
 
-	const { username } = useSelector(state => state.loginReducer);
+	const socket = io('localhost:8080');
+
 	const { error } = useSelector(state => state.loginReducer);
+	const { isTaken } = useSelector(state => state.loginReducer);
 	const dispatch = useDispatch();
 
 	const fullRegEx = /^([a-zåäö]{1})(\S{2,19})$/i;
@@ -17,17 +25,20 @@ export const Login = () => {
 
 	const handleSubmit = e => {
 		e.preventDefault();
+
 		switch (true) {
-			case doesntStartWithLetter.test(username):
+			case user === undefined:
+				return dispatch(setErrorMessage('please enter a nickname'));
+			case doesntStartWithLetter.test(user):
 				return dispatch(setErrorMessage('must begin with letter'));
-			case noSpacesAllowed.test(username):
+			case noSpacesAllowed.test(user):
 				return dispatch(setErrorMessage('may not contain spaces'));
-			case username.length < 3:
+			case user.length < 3:
 				return dispatch(setErrorMessage('must be at least 3 characters'));
-			case username.length > 20:
+			case user.length > 20:
 				return dispatch(setErrorMessage('cannot exceed 20 characters'));
-			case fullRegEx.test(username):
-				return setIsLoggedIn(true);
+			case fullRegEx.test(user):
+				return dispatch(setUsername(user)), setIsLoggedIn(true);
 			default:
 				return dispatch(setErrorMessage('please try a different nickname'));
 		}
@@ -36,7 +47,15 @@ export const Login = () => {
 	const handleUsername = e => {
 		const event = e.target.value;
 		dispatch(setErrorMessage(''));
-		return dispatch(setUsername(event));
+		//cannot be on onChange
+		socket.emit('getUsername', event);
+		socket.on('validateUsername', response => {
+			dispatch(isUsernameTaken(response));
+		});
+		if(isTaken) {
+			return dispatch(setErrorMessage('username already taken'));
+		}
+		return setUser(event);
 	};
 
 	return isLoggedIn ? (

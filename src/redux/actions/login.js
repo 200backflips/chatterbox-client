@@ -11,3 +11,10 @@ export const setErrorMessage = error => {
 		payload: error
 	};
 };
+
+export const isUsernameTaken = username => {
+	return {
+		type: 'IS_USERNAME_TAKEN',
+		payload: username
+	};
+};

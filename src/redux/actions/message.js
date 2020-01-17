@@ -4,10 +4,3 @@ export const appendMessage = message => {
 		payload: message
 	};
 };
-
-export const appendAdminMessage = message => {
-	return {
-		type: 'APPEND_ADMIN_MESSAGE',
-		payload: message
-	};
-};
