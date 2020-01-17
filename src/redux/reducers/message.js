@@ -1,7 +1,6 @@
 const initState = {
-	sentMessages:[],
-	receivedMessages:[],
-	adminMessages:[],
+	messages: [],
+	adminMessages: []
 };
 
 export const messageReducer = (state = initState, { type, payload }) => {
@@ -9,18 +8,13 @@ export const messageReducer = (state = initState, { type, payload }) => {
 		case 'APPEND_SENT_MESSAGE':
 			return {
 				...state,
-				sentMessages: [...state.sentMessages, payload]
+				messages: [...state.messages, payload]
 			};
-			case 'APPEND_RECEIVED_MESSAGE':
-				return {
-					...state,
-					receivedMessages: [...state.receivedMessages, payload]
-				};
-				case 'APPEND_ADMIN_MESSAGE':
-					return {
-						...state,
-						adminMessages: [...state.adminMessages, payload]
-					};
+		case 'APPEND_ADMIN_MESSAGE':
+			return {
+				...state,
+				adminMessages: [...state.adminMessages, payload]
+			};
 		default:
 			return state;
 	}

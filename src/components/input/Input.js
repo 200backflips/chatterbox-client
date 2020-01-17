@@ -1,24 +1,29 @@
 import React from 'react';
 import './Input.css';
-import { useDispatch } from 'react-redux';
-import { appendSentMessage } from '../../redux/actions/message';
+import { useSelector, useDispatch } from 'react-redux';
+import { appendMessage } from '../../redux/actions/message';
 import io from 'socket.io-client';
+import moment from 'moment';
 
 export const Input = () => {
+	const { username } = useSelector(state => state.loginReducer);
 	const dispatch = useDispatch();
 	const socket = io('localhost:8080');
-
-	const handleSubmit = message => {
-		socket.emit('sentMessages', message);
-		dispatch(appendSentMessage(message));
-	}
 
 	const submitWithEnter = e => {
 		if (e.keyCode === 13 && e.shiftKey === false && e.target.value.length > 1) {
 			e.preventDefault();
-			handleSubmit(e.target.value);
+			handleSubmit({
+				user: username,
+				message: e.target.value,
+				timestamp: moment()
+			});
 			e.target.value = '';
 		}
+	};
+	const handleSubmit = message => {
+		socket.emit('sentMessages', message);
+		dispatch(appendMessage(message));
 	};
 
 	return (
