@@ -1,9 +1,6 @@
-import { isUsernameTaken } from '../actions/login';
-
 const initState = {
 	username: '',
 	error: '',
-	isTaken: false
 };
 
 export const loginReducer = (state = initState, { type, payload }) => {
@@ -18,8 +15,6 @@ export const loginReducer = (state = initState, { type, payload }) => {
 				...state,
 				error: payload
 			};
-		case 'IS_USERNAME_TAKEN':
-			return { isTaken: payload };
 		default:
 			return state;
 	}

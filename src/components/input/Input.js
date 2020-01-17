@@ -9,7 +9,7 @@ export const Input = () => {
 	const socket = io('localhost:8080');
 
 	const submitWithEnter = e => {
-		if (e.keyCode === 13 && e.shiftKey === false && e.target.value.length > 1) {
+		if (e.keyCode === 13 && e.shiftKey === false && e.target.value.length >= 1) {
 			e.preventDefault();
 			handleSubmit(e.target.value);
 			e.target.value = '';

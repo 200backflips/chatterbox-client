@@ -21,8 +21,8 @@ export const Feed = () => {
 	useEffect(() => {
 		const socket = io('localhost:8080');
 
-		socket.emit('join', username);
 		socket.on('join', response => {
+			console.log(response);
 			dispatch(
 				appendMessage({
 					user: 'admin',
