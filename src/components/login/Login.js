@@ -2,15 +2,18 @@ import React, { useState, useEffect } from 'react';
 import './Login.css';
 import { Redirect } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { setUsername, setErrorMessage } from '../../redux/actions/login';
+import {
+	setUsername,
+	setErrorMessage,
+	toggleLogIn
+} from '../../redux/actions/login';
 import io from 'socket.io-client';
 
 export const Login = () => {
-	const [isLoggedIn, setIsLoggedIn] = useState(false);
 	const [user, setUser] = useState();
 
 	const { error } = useSelector(state => state.loginReducer);
-	const { username } = useSelector(state => state.loginReducer);
+	const { isLoggedIn } = useSelector(state => state.loginReducer);
 	const dispatch = useDispatch();
 
 	const socket = io('localhost:8080');
@@ -19,12 +22,12 @@ export const Login = () => {
 		socket.on('validateUsername', response => {
 			if (!response.error) {
 				dispatch(setUsername(response.username));
-				setIsLoggedIn(!isLoggedIn);
+				dispatch(toggleLogIn(true));
+				socket.emit('join', response.username);
 			}
 			dispatch(setErrorMessage(response.error));
 		});
 		return () => {
-			socket.emit('join', username);
 			socket.off('sendUsername');
 			socket.off('validateUsername');
 		};
@@ -33,7 +36,6 @@ export const Login = () => {
 	const handleSubmit = e => {
 		e.preventDefault();
 		if (user !== undefined) {
-			console.log(user)
 			return socket.emit('sendUsername', user);
 		}
 	};
@@ -53,7 +55,7 @@ export const Login = () => {
 			<form className="login-form" onSubmit={handleSubmit}>
 				<input type="text" onChange={handleUsername} />
 				<span className={error && 'error-msg'}>{error}</span>
-				<button type="submit">LOG IN</button>
+				<button type="submit">CONNECT</button>
 			</form>
 		</div>
 	);

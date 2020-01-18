@@ -2,7 +2,7 @@ import React from 'react';
 import './Input.css';
 import { useSelector } from 'react-redux';
 import io from 'socket.io-client';
-import moment from 'moment';
+import { userMessage } from '../../messageTypes';
 
 export const Input = () => {
 	const { username } = useSelector(state => state.loginReducer);
@@ -15,18 +15,14 @@ export const Input = () => {
 			e.target.value = '';
 		}
 	};
+	
 	const handleSubmit = value => {
-		const message = {
-			user: username,
-			message: value,
-			timestamp: moment()
-		};
-		socket.emit('sentMessages', message);
+		socket.emit('sentMessages', userMessage(value, username));
 	};
 
 	return (
 		<div className="Input">
-			<textarea onKeyDown={submitWithEnter} />
+			<textarea placeholder='write something' onKeyDown={submitWithEnter} />
 		</div>
 	);
 };

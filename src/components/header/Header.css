@@ -1,18 +1,17 @@
 .Header {
   display: flex;
-  justify-content: space-between;
-  height: 10vh;
-  background-color: #3e4a63;
+	background: linear-gradient(90deg, #364d7a 0%, #3a548f 100%);
   color: #ffffff;
+	border-bottom: 2px solid #ffffff;
 }
 
 .Header h2 {
-  padding: 0.5em;
-  text-align: left;
-  width: 73vw;
+  align-self: center;
+  width: 50%;
+  margin: 0 auto;
 }
 
 .Header a img {
   margin: 0.5em;
-  width: 13vw;
+  width: 3rem;
 }

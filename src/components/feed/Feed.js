@@ -4,7 +4,7 @@ import './Feed.css';
 import { Message } from '../message/Message';
 import io from 'socket.io-client';
 import { appendMessage } from '../../redux/actions/message';
-import moment from 'moment';
+import { adminMessageJoined, adminMessageLeft } from '../../messageTypes';
 
 export const Feed = () => {
 	const { username } = useSelector(state => state.loginReducer);
@@ -22,31 +22,19 @@ export const Feed = () => {
 		const socket = io('localhost:8080');
 
 		socket.on('join', response => {
-			console.log(response);
-			dispatch(
-				appendMessage({
-					user: 'admin',
-					message: `${response} has joined the chat`,
-					timestamp: moment()
-				})
-			);
+			dispatch(appendMessage(adminMessageJoined(response)));
 		});
-
 		socket.on('receivedMessages', response => {
 			dispatch(appendMessage(response));
+		});
+		socket.on('userLeft', user => {
+			dispatch(appendMessage(adminMessageLeft(user)));
 		});
 
 		return () => {
 			socket.off('receivedMessages');
 			socket.off('join');
-			socket.off('disconnect');
-			dispatch(
-				appendMessage({
-					user: 'admin',
-					message: `${username} has left the chat`,
-					timestamp: moment()
-				})
-			);
+			socket.off('userLeft');
 		};
 	}, []);
 

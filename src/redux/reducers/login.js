@@ -1,6 +1,7 @@
 const initState = {
 	username: '',
 	error: '',
+	isLoggedIn: false
 };
 
 export const loginReducer = (state = initState, { type, payload }) => {
@@ -14,6 +15,11 @@ export const loginReducer = (state = initState, { type, payload }) => {
 			return {
 				...state,
 				error: payload
+			};
+		case 'TOGGLE_LOG_IN':
+			return {
+				...state,
+				isLoggedIn: payload
 			};
 		default:
 			return state;

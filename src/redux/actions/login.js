@@ -11,3 +11,10 @@ export const setErrorMessage = error => {
 		payload: error
 	};
 };
+
+export const toggleLogIn = isLoggedIn => {
+	return {
+		type: 'TOGGLE_LOG_IN',
+		payload: isLoggedIn
+	};
+};

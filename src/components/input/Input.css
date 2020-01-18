@@ -1,16 +1,16 @@
 .Input {
   display: flex;
   padding-top: 0.6rem;
+  background: #ffffff;
 	border-top: 2px solid gainsboro;
-	color: white;
 }
 
 .Input textarea {
   align-self: center;
-  width: 80vw;
+  width: 18rem;
   margin: 0 auto;
-	padding: 0.8rem;
-  font-size: 1.2rem;
+	padding: 0.7rem;
+  font-size: 1.4rem;
   resize: none;
   border: none;
   outline: none;
