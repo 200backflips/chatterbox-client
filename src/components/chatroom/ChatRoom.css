@@ -4,11 +4,7 @@
 		flex-direction: column;
 		justify-content: center;
 		height: 100vh;
-		background: linear-gradient(
-			120deg,
-			rgba(201, 134, 147, 1) 50%,
-			rgba(127, 114, 184, 1) 50%
-		);
+		background: #645f7c;
 		margin: 0 auto;
 	}
 
@@ -16,7 +12,7 @@
 		align-self: center;
 		margin: 0 auto;
 		width: 450px;
-		box-shadow: 4px 6px 12px -2px #665c94;
+		box-shadow: 4px 6px 12px -2px #333044;
 	}
 	.Header a img {
 		width: 4rem;
@@ -26,14 +22,14 @@
 		align-self: center;
 		width: 450px;
 		background: #ffffff;
-		box-shadow: 12px 0 12px -8px #665c94;
+		box-shadow: 12px 0 12px -8px #333044;
 	}
 
 	.Input {
 		align-self: center;
 		width: 450px;
 		height: 110px;
-		box-shadow: 5px 6px 12px -1px #665c94;
+		box-shadow: 5px 6px 12px -1px #333044;
 	}
 
 	.user-left {
