@@ -4,7 +4,7 @@
 	align-self: flex-start;
 	max-width: 80vw;
 	word-wrap: break-word;
-	background: rgb(117, 101, 185);
+	background: rgb(93, 83, 134);
 	color: #ffff;
 	margin: 0 0.5em 0.5em 1em;
 	padding: 1em;
@@ -21,8 +21,8 @@
 	word-wrap: break-word;
 	background: linear-gradient(
 		94deg,
-		rgb(97, 85, 153) 100%,
-		rgb(117, 101, 185) 100%
+		rgb(93, 83, 134) 100%,
+		rgb(113, 101, 167) 100%
 	);
 	color: #ffff;
 	padding: 1em;

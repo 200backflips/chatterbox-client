@@ -1,8 +1,8 @@
 .Login {
 	background: linear-gradient(
 		94deg,
-		rgb(97, 85, 153) 100%,
-		rgb(117, 101, 185) 100%
+		rgb(93, 83, 134) 100%,
+		rgb(113, 101, 167) 100%
 	);
 	height: 100vh;
 	display: flex;
@@ -39,8 +39,8 @@ button {
 .login-form button[type='submit'] {
 	background: linear-gradient(
 		94deg,
-		rgb(97, 85, 153) 100%,
-		rgb(117, 101, 185) 100%
+		rgb(93, 83, 134) 100%,
+		rgb(113, 101, 167) 100%
 	);
 	color: #ffffff;
 	margin-top: 0.3rem;
