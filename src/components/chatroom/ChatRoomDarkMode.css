@@ -1,0 +1,48 @@
+@media screen and (min-width: 500px) {
+	.ChatRoomDarkMode {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		height: 100vh;
+		background: radial-gradient(
+			circle,
+			rgb(53, 53, 53) 0%,
+			rgb(24, 24, 24) 100%
+		);
+		margin: 0 auto;
+	}
+
+	.HeaderDarkMode {
+		align-self: center;
+		margin: 0 auto;
+		width: 450px;
+		box-shadow: 4px 6px 12px -2px #212121;
+	}
+	.HeaderDarkMode a img {
+		width: 4rem;
+	}
+
+	.FeedDarkMode {
+		align-self: center;
+		width: 450px;
+		background: #ffffff;
+		box-shadow: 12px 0 12px -8px #212121;
+	}
+
+	.InputDarkMode {
+		align-self: center;
+		width: 450px;
+		height: 110px;
+		box-shadow: 5px 6px 12px -1px #212121;
+	}
+
+	.user-leftDarkMode {
+		font-size: 0.8rem;
+	}
+	.user-rightDarkMode {
+		font-size: 0.8rem;
+	}
+	.user-adminDarkMode {
+		font-size: 0.8rem;
+	}
+}

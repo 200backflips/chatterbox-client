@@ -1,6 +1,7 @@
 import React, { useEffect, createRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import './Feed.css';
+import './FeedDarkMode.css';
 import { Message } from '../message/Message';
 import io from 'socket.io-client';
 import { appendMessage } from '../../redux/actions/message';
@@ -9,6 +10,7 @@ import { adminMessageJoined, adminMessageLeft } from '../../messageTypes';
 export const Feed = () => {
 	const { username } = useSelector(state => state.loginReducer);
 	const { messages } = useSelector(state => state.messageReducer);
+	const { darkMode } = useSelector(state => state.darkModeReducer);
 	const dispatch = useDispatch();
 	const feedRef = createRef();
 
@@ -48,7 +50,7 @@ export const Feed = () => {
 	};
 
 	return (
-		<div className="Feed" ref={feedRef}>
+		<div className={`Feed${darkMode ? 'DarkMode' : ''}`} ref={feedRef}>
 			{messages.map((content, i) => (
 				<Message
 					content={content}

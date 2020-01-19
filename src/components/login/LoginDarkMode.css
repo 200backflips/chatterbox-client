@@ -1,0 +1,59 @@
+.LoginDarkMode {
+	background: radial-gradient(
+		circle,
+		rgb(53, 53, 53) 0%,
+		rgb(24, 24, 24) 100%
+	);
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-content: center;
+	margin: 0 auto;
+	color: #ffffff;
+	font-size: calc(10px + 2vmin);
+	text-align: center;
+}
+
+.LoginDarkMode p {
+	margin-bottom: 5rem;
+	font-size: 1.3rem;
+}
+
+.login-formDarkMode input,
+button {
+	display: flex;
+	justify-content: center;
+	margin: 0 auto;
+	width: 80vw;
+	font-size: 1.6rem;
+}
+
+.login-formDarkMode input[type='text'] {
+	padding: 0.2rem 0;
+	margin-bottom: 0.3rem;
+	text-align: center;
+	outline: none;
+}
+.login-formDarkMode button[type='submit'] {
+	background: radial-gradient(
+		circle,
+		rgb(53, 53, 53) 0%,
+		rgb(24, 24, 24) 100%
+	);
+	color: #ffffff;
+	margin-top: 0.3rem;
+	margin-bottom: 5rem;
+}
+.login-formDarkMode button[type='submit']:hover {
+	color: rgba(255,255,255,0.5);
+}
+
+@media screen and (min-width: 500px) {
+	.login-formDarkMode input,
+	button {
+		width: 50vw;
+		font-size: 1.2rem;
+	}
+}

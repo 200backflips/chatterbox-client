@@ -1,0 +1,22 @@
+.InputDarkMode {
+  display: flex;
+  padding-top: 0.6rem;
+	background: rgb(28, 29, 32);
+}
+
+.InputDarkMode form {
+  align-self: center;
+  margin: 0 auto;
+}
+
+.InputDarkMode input[type='text'] {
+  width: 20rem;
+	padding: 0.7rem;
+  font-size: 1.4rem;
+  outline: none;
+  background: rgb(28, 29, 32);
+	color: rgba(255,255,255,0.7);
+  border: 3px solid rgba(255,255,255,0.7);
+  border-radius: 1em;
+  text-align: center
+}

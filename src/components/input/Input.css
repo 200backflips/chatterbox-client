@@ -5,15 +5,18 @@
 	border-top: 2px solid gainsboro;
 }
 
-.Input textarea {
+.Input form {
   align-self: center;
-  width: 18rem;
   margin: 0 auto;
+}
+
+.Input input[type='text'] {
+  width: 20rem;
 	padding: 0.7rem;
   font-size: 1.4rem;
-  resize: none;
-  border: none;
   outline: none;
   background: #fafafa;
   border: 3px solid gainsboro;
+  border-radius: 1em;
+  text-align: center
 }

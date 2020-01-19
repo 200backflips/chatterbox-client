@@ -1,18 +1,18 @@
-.Feed {
+.FeedDarkMode {
   height: 30em;
   overflow: auto;
   scroll-behavior: smooth;
-  background: #f5f5f5;
+	background: #292929;
 }
 
-.Message {
+.MessageDarkMode {
   display: flex;
   flex-direction: column;
   font-size: 1.3em;
 }
 
 @media screen and (max-width: 320px) {
-  .Feed {
+  .FeedDarkMode {
     height: 24em;
   }
 }
