@@ -4,7 +4,11 @@
 		flex-direction: column;
 		justify-content: center;
 		height: 100vh;
-		background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+		background: linear-gradient(
+			120deg,
+			rgba(201, 134, 147, 1) 50%,
+			rgba(127, 114, 184, 1) 50%
+		);
 		margin: 0 auto;
 	}
 
@@ -12,24 +16,24 @@
 		align-self: center;
 		margin: 0 auto;
 		width: 450px;
-		box-shadow: 4px 6px 7px -3px #182848;
+		box-shadow: 4px 6px 12px -2px #665c94;
 	}
 	.Header a img {
 		width: 4rem;
 	}
-	
+
 	.Feed {
 		align-self: center;
 		width: 450px;
 		background: #ffffff;
-		box-shadow: 3px 5px 7px -13px #182848;
+		box-shadow: 12px 0 12px -8px #665c94;
 	}
-	
+
 	.Input {
 		align-self: center;
 		width: 450px;
 		height: 110px;
-		box-shadow: 3px 5px 7px -7px #182848;
+		box-shadow: 5px 6px 12px -1px #665c94;
 	}
 
 	.user-left {

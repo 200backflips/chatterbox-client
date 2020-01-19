@@ -1,17 +1,21 @@
 .Header {
-  display: flex;
-	background: linear-gradient(90deg, #364d7a 0%, #3a548f 100%);
-  color: #ffffff;
-	border-bottom: 2px solid #ffffff;
+	display: flex;
+  background: linear-gradient(
+		94deg,
+		rgb(97, 85, 153) 100%,
+		rgb(117, 101, 185) 100%
+	);
+	color: #ffffff;
+	border-bottom: 1px solid #ffffff;
 }
 
 .Header h2 {
-  align-self: center;
-  width: 50%;
-  margin: 0 auto;
+	align-self: center;
+	width: 50%;
+	margin: 0 auto;
 }
 
 .Header a img {
-  margin: 0.5em;
-  width: 3rem;
+	margin: 0.5em;
+	width: 3rem;
 }

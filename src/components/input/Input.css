@@ -1,7 +1,7 @@
 .Input {
   display: flex;
   padding-top: 0.6rem;
-  background: #ffffff;
+  background: #fafafa;
 	border-top: 2px solid gainsboro;
 }
 
@@ -14,5 +14,6 @@
   resize: none;
   border: none;
   outline: none;
+  background: #fafafa;
   border: 3px solid gainsboro;
 }
