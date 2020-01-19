@@ -2,7 +2,7 @@
 	position: relative;
 	flex-direction: column;
 	align-self: flex-start;
-	max-width: 80vw;
+	max-width: 15rem;
 	word-wrap: break-word;
 	background: rgb(93, 83, 134);
 	color: #ffff;
@@ -17,7 +17,7 @@
 	align-self: flex-end;
 	margin: 0 1em 0.5em 0.5em;
 	position: relative;
-	max-width: 80vw;
+	max-width: 15rem;
 	word-wrap: break-word;
 	background: linear-gradient(
 		94deg,
@@ -34,7 +34,7 @@
 	align-self: center;
 	position: relative;
 	margin-bottom: 0.5em;
-	max-width: 50vw;
+	max-width: 12rem;
 	word-wrap: break-word;
 	background: #eeeeee;
 	color: rgba(0, 0, 0, 0.7);

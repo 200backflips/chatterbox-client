@@ -1,5 +1,6 @@
 .Header {
-	display: flex;
+  display: flex;
+  padding-bottom: 0.5rem;
 	background: linear-gradient(
 		94deg,
 		rgb(93, 83, 134) 100%,
@@ -11,13 +12,13 @@
 
 .Header h2 {
 	align-self: center;
-	width: 30%;
 	margin: 0 auto;
 }
 
 .Header a img {
+  align-self: center;
 	margin: 0.5em;
-	width: 2.5rem;
+	width: 2.2rem;
 	object-fit: cover;
 }
 
